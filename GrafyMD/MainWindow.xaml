@@ -1,0 +1,79 @@
+﻿<Window
+    x:Class="GrafyMD.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GrafyMD"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Padding="50">
+        
+        <StackPanel x:Name="Controls" 
+                    Orientation="Vertical" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Top" 
+                    Padding="100,0">
+            <TextBlock FontSize="20" 
+                       Text="Parametry grafu" 
+                       Margin="5"/>
+            <NumberBox x:Name="VertexCount"
+                       Margin="20"
+                       AcceptsExpression="True"
+                       Header="Ilość wierzchołków:"
+                       Value="10"
+                       SpinButtonPlacementMode="Compact"
+                       LargeChange="5" />
+            <Slider x:Name="ConnectionPropability"
+                    Header="Prawdopodbieństwo połączenia" 
+                    Margin="20"
+                    SmallChange="0.01"
+                    LargeChange="0.1"
+                    Maximum="1"
+                    StepFrequency="0.01"
+                    Value="0.3"
+                    TickFrequency="0.1" 
+                    TickPlacement="BottomRight" />
+            <StackPanel Orientation="Horizontal" Width="auto" >
+                <StackPanel Margin="20" MinWidth="120" Orientation="Vertical">
+                    <TextBlock x:Name="ConnectionStats" Text="Ilość połączeń: "/>
+                    <TextBlock x:Name="Cycles3Stats" Text="Ilość cykli 3: "/>
+                    <TextBlock x:Name="Cycles4Stats" Text="Ilość cykli 4: "/>
+                </StackPanel>
+                <Button x:Name="Generate" 
+                        Margin="20"
+                        HorizontalAlignment="Right"
+                        Click="Generate_Click" 
+                        Content="Generuj"/>
+            </StackPanel>
+            
+        </StackPanel>
+        <ScrollViewer>
+            <StackPanel Height="auto">
+                <TextBlock FontSize="20" 
+                           Text="Podgląd raportu" 
+                           Margin="5"/>
+                <TextBox x:Name="output"
+                         AcceptsReturn="True"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         TextWrapping="Wrap"
+                         Padding="15,5"
+                         Margin="20"
+                         Height="Auto"
+                         MinWidth="300"
+                         MaxHeight="700"
+                         IsReadOnly="True"
+                         FontSize="15"/>
+                <Button x:Name="Save"
+                        HorizontalAlignment="Right"
+                        Margin="5,20"
+                        Content="Zapisz raport" 
+                        Click="Save_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+    </StackPanel>
+    
+</Window>

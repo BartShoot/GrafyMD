@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GrafyMD (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "GrafyMD (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
